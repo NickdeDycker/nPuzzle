@@ -4,9 +4,23 @@
     tools:context="nl.mprog.npuzzle.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/easy"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/easy"
         app:showAsAction="never"/>
-
+    <item
+        android:id="@+id/medium"
+        android:orderInCategory="100"
+        android:title="@string/medium"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/hard"
+        android:orderInCategory="100"
+        android:title="@string/hard"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/ok"
+        android:orderInCategory="100"
+        android:title="@string/ok"
+        app:showAsAction="never"/>
 </menu>

@@ -1,32 +1,33 @@
 package nl.mprog.npuzzle;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     GridView grid;
-
-    static final String[] images = new String[] {
-            "Picture 1", "Picture 2", "Picture 3"};
+    
+    //SharedPreferences.Editor editor = getSharedPreferences("mode", MODE_PRIVATE).edit();
+    static int N = 3;
+    
     
     public void onCreate(Bundle savedInstanceState) {
     	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        grid = (GridView) findViewById(R.id.gridView);
+        //editor.putInt("difficulty", 3);
+        
+        GridView grid = (GridView) findViewById(R.id.gridView);
         
         ImageAdapter adapter = new ImageAdapter(this);
         
@@ -36,6 +37,7 @@ public class MainActivity extends ActionBarActivity {
         	
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                Intent intent = new Intent(MainActivity.this, Image.class);
+               intent.putExtra("id", position);
                startActivity(intent);	
                 
             }
@@ -56,7 +58,19 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.easy) {
+            N = 3;
+        	//editor.putInt("difficulty", N);
+        }
+        if (id == R.id.medium) {
+        	N = 4;
+            //editor.putInt("difficulty", N);
+        }
+        if (id == R.id.hard) {
+        	N = 5;
+        	//editor.putInt("difficulty", N);
+        }
+        if (id == R.id.ok) {
             return true;
         }
         return super.onOptionsItemSelected(item);
