@@ -3,10 +3,12 @@
 
     <string name="app_name">nPuzzle</string>
     <string name="nPuzzle">n-Puzzle</string>
-    <string name="hello_world">n-Puzzle</string>
     <string name="easy">Easy 3x3</string>
 	<string name="medium">Medium 4x4</string>
 	<string name="hard">Hard 5x5</string>
-	<string name="ok">OK</string>
+	<string name="menu">Menu</string>
+	<string name="reset">Reset</string>
+	<string name="move">Moves: </string>
+	<string name="win">You win, congratulations!</string>
 	
 </resources>

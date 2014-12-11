@@ -1,38 +1,42 @@
 package nl.mprog.npuzzle;
 
-import android.app.Activity;
+import java.util.ArrayList;
+
 import android.content.Context;
-import android.graphics.Point;
-import android.util.DisplayMetrics;
-import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class ImageAdapter extends BaseAdapter{
 
-	// private context? Better name?
-	Context c;
+	private Context c;
 	
-	public Integer[] imageArray = {
-			R.drawable.puzzle_0,
-			R.drawable.puzzle_4,
-			R.drawable.puzzle_2,
-			R.drawable.puzzle_3
-	};
-	
-	public ImageAdapter(Context context) {
+	protected ArrayList<Integer> image_id_array = new ArrayList<Integer>();
+
+    /*
+     * Retrieve all the drawables with a name starting with puzzle_ .
+     */
+    private void addAllDrawables() {
+    	
+    	for (int i = 0; i < 10; i++) {
+    		int res_id = c.getResources().getIdentifier("puzzle_"+i, "drawable",  c.getPackageName());
+    		
+    		if (res_id != 0) {
+    			image_id_array.add(res_id);
+    		}
+    	}
+    }
+    
+	protected ImageAdapter(Context context) {
 		c = context;
+		addAllDrawables();
 	}
 	
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
-		return imageArray.length;
+		return image_id_array.size();
 	}
 
 	@Override
@@ -48,34 +52,21 @@ public class ImageAdapter extends BaseAdapter{
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		ImageView imageGrid = new ImageView(c);
-		
-		WindowManager wm = (WindowManager)c.getSystemService(Context.WINDOW_SERVICE);
-		Display display = wm.getDefaultDisplay();
-		
-		DisplayMetrics metrics = new DisplayMetrics();
-		display.getMetrics(metrics);
-		
-		int height = (int) (metrics.heightPixels / 2.5);
-		int width = (int) (metrics.widthPixels / 2.5);
-		
-		if (height > width){
-			height = width;
-		}
-		else{
-			width = height;
-		}
-		
-	    imageGrid.setLayoutParams(new GridView.LayoutParams(width, height));
-	    imageGrid.setAdjustViewBounds(true);
-	    imageGrid.setScaleType(ImageView.ScaleType.FIT_CENTER);
-		imageGrid.setPadding(0, 100, 0 ,0);
-		
-		imageGrid.setImageResource(imageArray[position]);
-		
-		return imageGrid;
-	}
+	public View getView(int position, View v, ViewGroup parent) {
+		View grid;
+		LayoutInflater inflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+		// Retrieve the ImageView from the .xml file for the layout.
+        if (v == null) {
+		    grid = new View(c);
+		    grid = inflater.inflate(R.layout.single_grid, parent, false);
+		    ImageView imageView = (ImageView)grid.findViewById(R.id.grid_single);
+		    imageView.setImageResource(image_id_array.get(position));  	    
+		} 
+        else {
+		    grid = (View) v;
+		}
+        
+        return grid;
+	}
 }

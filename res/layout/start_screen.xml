@@ -2,26 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nl.mprog.npuzzle.MainActivity" >
 
     <TextView
         android:id="@+id/startTitle"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="75dp"
         android:gravity="center"
         android:text="@string/nPuzzle" />
 
     <GridView
         android:id="@+id/gridView"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/startTitle"
-        android:gravity="center"
-        android:numColumns="2" />
+        android:layout_height="match_parent"
+        android:stretchMode="columnWidth"
+        android:numColumns="auto_fit" 
+        android:layout_below="@+id/startTitle" />
 
 </RelativeLayout>

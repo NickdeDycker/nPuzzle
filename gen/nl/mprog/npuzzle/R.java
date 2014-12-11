@@ -1637,8 +1637,8 @@ containing a value of this type.
         public static final int puzzle_0=0x7f020034;
         public static final int puzzle_1=0x7f020035;
         public static final int puzzle_2=0x7f020036;
-        public static final int puzzle_3=0x7f020037;
-        public static final int puzzle_4=0x7f020038;
+        public static final int puzzle_4=0x7f020037;
+        public static final int puzzle_5=0x7f020038;
     }
     public static final class id {
         public static final int action_bar=0x7f090033;
@@ -1660,20 +1660,22 @@ containing a value of this type.
         public static final int bottom=0x7f09001e;
         public static final int checkbox=0x7f09002b;
         public static final int collapseActionView=0x7f090015;
-        public static final int countdown=0x7f090044;
+        public static final int completed_image=0x7f090048;
         public static final int decor_content_parent=0x7f090031;
         public static final int default_activity_button=0x7f090026;
         public static final int dialog=0x7f090019;
         public static final int disableHome=0x7f09000d;
         public static final int dropdown=0x7f09001a;
-        public static final int easy=0x7f090047;
+        public static final int easy=0x7f09004a;
         public static final int edit_query=0x7f090035;
         public static final int end=0x7f09001c;
-        public static final int endgame=0x7f090046;
+        public static final int endgame=0x7f090045;
         public static final int expand_activities_button=0x7f090024;
         public static final int expanded_menu=0x7f09002a;
-        public static final int gridView=0x7f090042;
-        public static final int hard=0x7f090049;
+        public static final int game_board=0x7f090041;
+        public static final int gridView=0x7f090044;
+        public static final int grid_single=0x7f090042;
+        public static final int hard=0x7f09004c;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090028;
@@ -1681,16 +1683,18 @@ containing a value of this type.
         public static final int image=0x7f090025;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090027;
-        public static final int medium=0x7f090048;
+        public static final int medium=0x7f09004b;
+        public static final int menu=0x7f09004d;
+        public static final int menu_button=0x7f090049;
         public static final int middle=0x7f09001d;
+        public static final int moves=0x7f090047;
         public static final int never=0x7f090017;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
-        public static final int ok=0x7f09004a;
-        public static final int picture=0x7f090045;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
         public static final int radio=0x7f09002d;
+        public static final int reset=0x7f09004e;
         public static final int search_badge=0x7f090037;
         public static final int search_bar=0x7f090036;
         public static final int search_button=0x7f090038;
@@ -1706,16 +1710,16 @@ containing a value of this type.
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
         public static final int split_action_bar=0x7f090004;
-        public static final int startTitle=0x7f090041;
+        public static final int startTitle=0x7f090043;
         public static final int submit_area=0x7f09003e;
         public static final int tabMode=0x7f09000c;
-        public static final int table=0x7f090043;
         public static final int title=0x7f090029;
         public static final int top=0x7f09001f;
         public static final int up=0x7f090001;
         public static final int useLogo=0x7f090013;
         public static final int withText=0x7f090018;
         public static final int wrap_content=0x7f090009;
+        public static final int you_win=0x7f090046;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1766,9 +1770,9 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030014;
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
-        public static final int activity_main=0x7f030017;
-        public static final int game_screen=0x7f030018;
-        public static final int image_screen=0x7f030019;
+        public static final int game_screen=0x7f030017;
+        public static final int single_grid=0x7f030018;
+        public static final int start_screen=0x7f030019;
         public static final int support_simple_spinner_dropdown_item=0x7f03001a;
         public static final int win_screen=0x7f03001b;
     }
@@ -1830,12 +1834,14 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000d;
         public static final int app_name=0x7f0a000f;
-        public static final int easy=0x7f0a0012;
-        public static final int hard=0x7f0a0014;
-        public static final int hello_world=0x7f0a0011;
-        public static final int medium=0x7f0a0013;
+        public static final int easy=0x7f0a0011;
+        public static final int hard=0x7f0a0013;
+        public static final int medium=0x7f0a0012;
+        public static final int menu=0x7f0a0014;
+        public static final int move=0x7f0a0016;
         public static final int nPuzzle=0x7f0a0010;
-        public static final int ok=0x7f0a0015;
+        public static final int reset=0x7f0a0015;
+        public static final int win=0x7f0a0017;
     }
     public static final class style {
         /** 
